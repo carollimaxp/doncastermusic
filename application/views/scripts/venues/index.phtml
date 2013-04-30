@@ -1,0 +1,29 @@
+<h1>Venue List <a href="#" class="inTitleLink showSearchTools">Show search tools</a></h1>
+
+<div class="searchTools hidden">
+    <input placeholder="Enter any search words..." name="search" type="text" id="search"/>
+    <img src="/img/icons/loader.gif" alt="Loader" id="loader"/>
+</div>
+
+<table id="venueTable" class="searchTable advancedtable" cellspacing="0" >
+    <thead>
+        <tr>
+            <th width="300px">Venue name</th>
+            <th>Address</th>
+            <th width="80px">Postcode</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        foreach($this->venues as $venue):
+        ?>
+            <tr>
+                <td><?=$venue['venue_name'];?></td>
+                <td><?=$venue['venue_address'];?></td>
+                <td><?=$venue['venue_postcode'];?></td>
+            </tr>
+        <?php
+        endforeach;
+        ?>
+    </tbody>
+</table>

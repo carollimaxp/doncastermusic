@@ -1,0 +1,58 @@
+<?php
+
+// //we have to set timezone to California
+// date_default_timezone_set('London/Lisbon');
+
+//requiring FB PHP SDK
+require 'lib/fb-sdk/src/facebook.php';
+
+//initializing keys
+$facebook = new Facebook(array(
+	'appId'  => '602808573067596',
+	'secret' => '96b5d96ea1226f80b01f2766d62a1a1e',
+	'cookie' => true, // enable optional cookie support
+));
+
+
+//query the events
+//we will select name, start_time, end_time, location, description this time
+//but there are other data that you can get on the event table (https://developers.facebook.com/docs/reference/fql/event/)
+//as you've noticed, we have TWO select statement here
+//since we can't just do "WHERE creator = your_fan_page_id".
+//only eid is indexable in the event table, sow we have to retrieve
+//list of events by eids
+//and this was achieved by selecting all eid from
+//event_member table where the uid is the id of your fanpage.
+//*yes, you fanpage automatically becomes an event_member
+//once it creates an event
+$fql    =   "SELECT name, pic, start_time, end_time, location, description
+			FROM event WHERE eid IN ( SELECT eid FROM event_member WHERE uid = 123710777801975 )
+			ORDER BY start_time asc";
+
+$param  =   array(
+'method'    => 'fql.query',
+'query'     => $fql,
+'callback'  => ''
+);
+
+$fqlResult   =   $facebook->api($param);
+
+
+//looping through retrieved data
+foreach( $fqlResult as $keys => $values ){
+
+	echo '<div>';
+
+	echo "<img src={$values['pic']} />";
+
+	echo "{$values['start_time']}";
+	echo "{$values['end_time']}";
+
+	echo "<h2> " . $values['name'] . "</h2>";
+	// echo "<div>More Info: " . $values['description'] . "</div>";
+
+	echo '</div>';
+
+}
+
+?>

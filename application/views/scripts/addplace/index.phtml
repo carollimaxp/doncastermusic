@@ -1,0 +1,50 @@
+<?php if(isset($this->result)):
+            echo '<h2>'.$this->result.'</h2>';
+      endif;?>
+<h1>Add a new place</h1>
+<form id="placeform" action="#" method="POST" />
+    <ul>
+        <li>
+            <label for="place_name">Place name</label>
+            <input type="text" name="place_name" id="place_name"/>
+        </li>
+        <li>
+            <label for="place_url">Nice name (URL friendly)</label>
+            <input type="text" name="place_url" id="place_url"/>
+        </li>
+        <li>
+            <label for="place_description">Description</label>
+            <textarea name="place_description" id="place_description"></textarea>
+        </li>
+        <li>
+            <label for="place_address">Address</label>
+            <input type="text" name="place_address" id="place_address"/>
+        </li>
+        <li>
+            <label for="place_postcode">Postcode</label>
+            <input type="text" name="place_postcode" id="place_postcode"/>
+        </li>
+        <li>
+            <label for="place_phone">Telephone No.</label>
+            <input type="text" name="place_phone" id="place_phone"/>
+        </li>
+        <li>
+            <label for="place_email">Email address</label>
+            <input type="text" name="place_email" id="place_email"/>
+        </li>
+        <li>
+            <label for="place_facebook">Website</label>
+            <input type="text" name="place_website" id="place_facebook"/>
+        </li>
+        <li>
+            <label for="place_facebook">Facebook URL</label>
+            <input type="text" name="place_facebook" id="place_facebook"/>
+        </li>
+        <li>
+            <label for="place_twitter">Twitter URL</label>
+            <input type="text" name="place_twitter" id="place_twitter"/>
+        </li>
+        <li>
+            <input type="submit" name="submit" id="submit" value="Submit" />
+        </li>
+    </ul>

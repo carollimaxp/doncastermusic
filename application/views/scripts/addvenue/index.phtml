@@ -1,0 +1,58 @@
+<?php if(isset($this->result)):
+            echo '<h2>'.$this->result.'</h2>';
+      endif;?>
+<h1>Add a new venue</h1>
+<form id="venueform" action="#" method="POST" />
+    <ul>
+        <li>
+            <label for="venue_name">Venue name</label>
+            <input type="text" name="venue_name" id="venue_name"/>
+        </li>
+        <li>
+            <label for="venue_url">Nice name (URL friendly)</label>
+            <input type="text" name="venue_url" id="venue_url"/>
+        </li>
+        <li>
+            <label for="venue_description">Description</label>
+            <textarea name="venue_description" id="venue_description"></textarea>
+        </li>
+        <li>
+            <label for="venue_equipment">Equipment available?</label>
+            <textarea name="venue_equipment" id="venue_equipment"></textarea>
+        </li>
+        <li>
+            <label for="venue_address">Address</label>
+            <input type="text" name="venue_address" id="venue_address"/>
+        </li>
+        <li>
+            <label for="venue_postcode">Postcode</label>
+            <input type="text" name="venue_postcode" id="venue_postcode"/>
+        </li>
+        <li>
+            <label for="venue_phone">Telephone No.</label>
+            <input type="text" name="venue_phone" id="venue_phone"/>
+        </li>
+        <li>
+            <label for="venue_email">Email address</label>
+            <input type="text" name="venue_email" id="venue_email"/>
+        </li>
+        <li>
+            <label for="venue_facebook">Website</label>
+            <input type="text" name="venue_website" id="venue_facebook"/>
+        </li>
+        <li>
+            <label for="venue_facebook">Facebook URL</label>
+            <input type="text" name="venue_facebook" id="venue_facebook"/>
+        </li>
+        <li>
+            <label for="venue_twitter">Twitter URL</label>
+            <input type="text" name="venue_twitter" id="venue_twitter"/>
+        </li>
+        <li>
+            <label for="venue_facebook_id">Facebook ID (if known)</label>
+            <input type="text" name="venue_facebook_id" id="venue_facebook_id"/>
+        </li>
+        <li>
+            <input type="submit" name="submit" id="submit" value="Submit" />
+        </li>
+    </ul>

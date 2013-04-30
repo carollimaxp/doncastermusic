@@ -1,0 +1,63 @@
+<h1>Doncaster Music Events</h1>
+<p>Events currently populated from our Facebook Events List. <a href="https://www.facebook.com/DoncasterGigGuide">Click here to visit our facebook page.</a></p>
+
+<?php
+
+require 'lib/fb-sdk/src/facebook.php';
+
+$facebook = new Facebook(array(
+	'appId'  => '602808573067596',
+	'secret' => '96b5d96ea1226f80b01f2766d62a1a1e',
+	'cookie' => true, // enable optional cookie support
+));
+
+$fql    =   "SELECT eid, name, pic, start_time, end_time, location, description
+			FROM event WHERE eid IN ( SELECT eid FROM event_member WHERE uid = 123710777801975 )
+			ORDER BY start_time asc";
+
+$param  =   array(
+'method'    => 'fql.query',
+'query'     => $fql,
+'callback'  => ''
+);
+
+$fqlResult   =   $facebook->api($param);
+
+// echo '<pre>';
+// print_r($fqlResult);
+// exit;
+
+echo "<ul id='imageList'>";
+//looping through retrieved data
+foreach( $fqlResult as $keys => $values ){
+
+	$description = $values['description'];
+
+	$date = $values['start_time'];
+	$time = strtotime($date);
+	$nowTime = time();
+	// $fixed = date('l, F jS Y (g:ia)', $time);
+	$fixed = date('l, F jS Y', $time);
+
+
+	if($time > $nowTime) {
+
+		echo "<li>";
+			echo "<img src={$values['pic']} />";
+				echo "<span class='listInfo'>";
+					echo "<h3> " . $values['name'] . "</h3>";
+					echo "<p class='date'>" . $fixed . "</p>";
+
+						if($description){
+							echo "<p>More Info: " . $values['description'] . "</p>";
+						};
+
+						echo "<a target='_blank' href='https://www.facebook.com/events/" . $values['eid'] . "'>More information</a>";
+
+				echo '</span>';
+		echo "</li>";
+	}
+}
+echo "</ul>";
+
+?>

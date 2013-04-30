@@ -1,0 +1,16 @@
+<h1>Doncaster Music Map<a href="#" class="inTitleLink removeSidebar">&larr; MAP SIZE &rarr;</a></h1>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+	    // var geocoder = new google.maps.Geocoder();
+		codeAddress(<?=json_encode($this->google)?>);
+	});
+</script>
+<?php
+	//$total = count($data);
+	//for($i = 0; $i<$total; $i++){
+		//$data[$i]['school_address'] = nl2br($data[$i]['school_address']);
+	//}
+?>
+	<script type="text/javascript">Eois = <?=json_encode($this->mapdata);?></script>
+	<div id='map_canvas' class="mapWrapper">Loading map...</div>

@@ -1,0 +1,32 @@
+<h1>Places List</h1>
+
+<input name="search" type="text" id="search"/>
+<img src="/img/icons/loader.gif" alt="Loader" id="loader"/>
+<table id="venueTable" class="searchTable advancedtable" cellspacing="0">
+    <thead>
+        <tr>
+            <th width="200px">Place name</th>
+            <th>Address</th>
+            <th width="90px">Postcode</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        $bg = '#ffffff';
+        foreach($this->places as $place) {
+          if($bg == '#ffffff'):
+            $bg = '#eeeeee';
+          else:
+            $bg = '#ffffff';
+          endif;
+        ?>
+        <tr bgcolor="<?=$bg;?>">
+            <td><?=$place['place_name'];?></td>
+            <td><?=$place['place_address'];?></td>
+            <td><?=$place['place_postcode'];?></td>
+        </tr>
+        <?php
+        };
+        ?>
+    </tbody>
+</table>

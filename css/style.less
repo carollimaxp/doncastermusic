@@ -1,0 +1,320 @@
+/*
+    colors
+*/
+
+@pink : #f0645e;
+@blue : #00aae6;
+@yellow : #fff341;
+@darkGrey : #404040;
+@lightGrey : #f5f5f5;
+
+/*
+
+    Main stuff
+
+*/
+
+body {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 400;
+    padding:0;
+    margin:0;
+    background: #606060 url(/images/debut_dark.png) repeat top;
+    color: @darkGrey;
+    line-height: 1.3em;
+}
+
+#wrapper {
+    margin: 24px auto;
+    background: #fff;
+    width: 90%;
+    max-width: 960px;
+    border-top: 4px #ccc solid;
+}
+
+/*
+
+    Header
+
+*/
+
+#header, #content, #footer, #nav {
+    overflow: hidden;
+    clear: both;
+}
+
+#header {
+    background: @pink url(/images/dm_logo.png) 20px 50% no-repeat;
+    padding:;
+    height:140px;
+    position: relative;
+}
+
+a#homeLink {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 140px;
+    width: 368px;
+    text-indent: -9999px;
+}
+a#homeLink:hover {
+    background: rgba(255,255,255,.2);
+}
+
+a {
+    color:#000000;
+    text-decoration: none;
+    padding: 1px 2px;
+    border-bottom: 1px dotted lighten(@darkGrey, 30%);
+    font-weight: 700;
+
+    &:hover {
+        color:#fff;
+        background-color: @blue;
+        text-decoration: none;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+/*
+
+    Nav
+
+*/
+
+#nav {
+    float: right;
+    font-size: 1.1em;
+    margin: 40px 20px 0 0 ;
+
+    a {
+        float: left;
+        vertical-align: text-bottom;
+        display: block;
+        padding: 38px 20px 0 ;
+        font-weight: 400;
+        text-transform: uppercase;
+        line-height: 24px;
+        color: @darkGrey;
+        border: 1px #d9524d solid;
+        border-width: 0 0 0 1px;
+    }
+
+    a.current {
+        background-color: #fff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        background: #00aae6;
+        color: #fff;
+    }
+    a.current:hover {
+        background-color: #fff;
+        color: @darkGrey;
+    }
+}
+
+/*---main content---*/
+#content{
+    float: left;
+    padding: 0 20px 20px;
+    width: 650px;
+}
+
+a.inTitleLink {
+    float: right;
+    line-height: 30px;
+    font-size: 14px;
+    padding: 0 4px;
+    font-weight: normal;
+}
+
+.hidden {
+    display: none;
+}
+
+.noSidebar #content {
+    width: 920px;
+}
+
+#sidebar {
+    float: right;
+    width: 230px;
+    padding: 0 20px 20px;
+    background: #f6f6f6;
+}
+
+.noSidebar #sidebar {
+    display: none;
+}
+
+.mapWrapper {
+    width: 100%;
+    height: 600px;
+}
+
+/*---venuetable---*/
+
+.searchTools {
+    padding: 10px;
+    background: @yellow;
+    margin-bottom: 10px;
+    position: relative;
+
+    #loader {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+    }
+}
+
+.venuetable{
+    margin-bottom:20px;
+    width:100%;
+}
+
+.venuetable th {
+    color:#ead700;
+    background-color: #000000;
+    text-decoration: none;
+    text-align: left;
+}
+.venuetable, .venuetable th, .venuetable td{
+    border:1px solid #dddddd;
+    text-align:left;
+}
+
+/*---test---*/
+
+h1, h2, h3 {
+    line-height: 30px;
+    margin: 24px 0;
+    font-size: 26px;
+    font-weight: 700;
+}
+h2 {
+    font-size: 22px;
+}
+h3 {
+    font-size: 18px;
+}
+
+/*---forms---*/
+form ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+form ul li {
+    display:block;
+    margin-top:10px;
+}
+form ul li label{
+    display:block;
+    clear:both;
+}
+input[type=text], textarea{
+    display:block;
+    font-size:1em;
+    padding:0.3em;
+    border:1px solid @darkGrey;
+    width:400px;
+}
+
+/*---Events List---*/
+
+ul#imageList {
+    list-style: none;
+
+    li {
+        display: block;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px @blue dashed;
+    }
+
+    li:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    img {
+        float: left;
+        max-width: 160px;
+        padding: 12px;
+        background: @lightGrey;
+        border: 1px solid @darkGrey;
+    }
+
+    span.listInfo {
+        display: block;
+        margin-left: 180px;
+
+        h3 {
+            margin: 0 0 5px;
+        }
+
+        p {
+            margin: 0 0 12px;
+        }
+
+        .date {
+            color: lighten(@darkGrey, 20%);
+            font-size: .9em;
+        }
+
+        a {
+            font-size: .9em;
+            background: @yellow;
+            padding: 2px 4px;
+
+            &:hover {
+                background: @blue;
+            };
+        }
+    }
+}
+
+
+
+/*---tables---*/
+
+.searchTable {
+    width: 100%;
+
+    thead {
+
+    }
+
+    th {
+        text-align: left;
+        border-bottom: 1px @darkGrey solid;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+/*---footer---*/
+#footer{
+    height:20px;
+    padding: 20px 20px 40px;
+    background: @darkGrey;
+    border-bottom: 4px solid #ccc;
+}
+#footer p{
+    color:#000000;
+    margin:5px 0;
+    text-align: right;
+}
+#footer a, #footer a:hover{
+    margin:5px 0;
+}

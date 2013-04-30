@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Doncaster Music</title>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:700,400' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/advancedtable.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<?php echo $this->headLink(); ?>
+<?php echo $this->headScript(); ?>
+<?php echo $this->headMeta(); ?>
+<meta name="google-site-verification" content="XXS1UP6fR51hhC4nvQjQ_YCZHSSrowS6b_7fEA7uru0" />
+<link rel="shortcut icon" href="/images/mapmarker.png" />
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<a href="/" id="homeLink">
+				Return home
+			</a>
+			<nav id="nav">
+			    <?php
+		        if($file = $this->_script	('nav.phtml')){
+		        	include($file);
+		        }
+			    ?>
+			</nav>
+		</div>
+		<section id="content">
+			<?php echo $this->layout()->content; ?>
+		</section>
+		<aside id="sidebar">
+
+			<h3>We need you</h3>
+			<p>If you would like to help in any way we would love to hear from you... <br /><a href="mailto:info@doncastermusic.co.uk">EMAIL US HERE</a></p>
+
+
+			<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/doncastermusic"  data-widget-id="315461721424805889"></a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</aside>
+        <div id="footer">
+        </div>
+	</div>
+
+</body>
+<script type="text/javascript" src="/js/advancedtable.js"></script>
+<script type="text/javascript" src="/js/page-ck.js"></script>
+<?php echo $this->inlineScript(); ?>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-39572626-1', 'doncastermusic.co.uk');
+  ga('send', 'pageview');
+
+</script>
+
+</html>

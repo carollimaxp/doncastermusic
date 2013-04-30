@@ -1,0 +1,112 @@
+table.datagrid {
+	border-collapse:collapse;
+}
+
+ul {
+	border:0;
+	margin:0;
+	padding:0;
+}
+.tableInfo{
+	float: left;
+	margin-top: 5px;
+}
+
+.advancedtable tbody td{
+	border-bottom:1px solid #DDD;
+	padding: 3px 0px;
+}
+
+/** ROWS PER PAGE NAVIGATION **/
+.tablePerPage{
+	float: right;
+}
+.tablePerPage span{
+	float: left;
+	margin-top: 5px;
+}
+.tablePerPage ul{
+	float: right;
+}
+.tablePerPage li {
+	border:0;
+	margin:0;
+	padding:0;
+	list-style:none;
+	float: left;
+}
+.tablePerPage a {
+	border-right:solid 1px #BBB;
+	margin-right:2px;
+}
+.tablePerPage .previous-off, .tablePerPage .next-off {
+	display:block;
+	float:left;
+	padding:3px 4px;
+}
+.tablePerPage .next a, .tablePerPage previous a {
+	border:none;
+	font-weight:bold;
+}
+.tablePerPage .active {
+	font-weight:bold;
+	color: #FFF;
+}
+.tablePerPage a:link, .tablePerPage a:visited {
+	display:block;
+	float:left;
+	padding:3px 6px;
+	text-decoration:underline;
+}
+.tablePerPage a:hover {
+	text-decoration:none;
+}
+
+/** PAGE SELECTOR **/
+.tableNavigation{
+	float:right;
+	margin-left: 50px;
+}
+.tableNavigation span{
+	float: left;
+	margin-top: 3px;
+}
+.tableNavigation ul{
+	float: right;
+}
+.tableNavigation li {
+	border:0;
+	margin:0;
+	padding:0;
+	list-style:none;
+	float: left;
+}
+.tableNavigation a {
+	border:solid 1px #BBB;
+	margin-right:2px;
+}
+.tableNavigation .active a {
+	font-weight:bold;
+	border:solid 1px #000;
+}
+.tableNavigation a:link,  .tableNavigation a:visited {
+	display:block;
+	float:left;
+	padding:3px 6px;
+	text-decoration:none;
+}
+.tableNavigation a:hover {
+	color: #333;
+}
+
+tfoot td{
+	background-color:#E5E5E5;
+	padding:0.6em;
+}
+
+.odd td{
+	background-color: #EEE;
+}
+.even td{
+	background-color: #FDFDFD;
+}

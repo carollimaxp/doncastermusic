@@ -1,0 +1,1 @@
+$().ready(function(){$("a.removeSidebar").on("click",function(){$("#wrapper").toggleClass("noSidebar")});$(".searchTable").length&&$(".searchTable").advancedtable({searchField:"#search",loadElement:"#loader",searchCaseSensitive:!1,ascImage:"/img/icons/up.png",descImage:"/img/icons/down.png"});$("a.showSearchTools").on("click",function(){$(".searchTools").toggle()})});
